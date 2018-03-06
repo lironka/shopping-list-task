@@ -1,0 +1,16 @@
+<div *ngIf="product" class="block-title">
+  {{product.name}} Details</div>
+<div *ngIf="product" class="details__content block-content">
+  <div class="form-group">
+    <label>Quantity </label>
+    <input type="number" #quantity="ngModel" [(ngModel)]="product.quantity" (blur)="updateDetails()">
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input type="number" #price="ngModel" [(ngModel)]="product.price" (blur)="updateDetails()">
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <textarea name="Description" #description="ngModel" [(ngModel)]="product.description" id="" rows="5" (blur)="updateDetails()"></textarea>
+  </div>
+</div>

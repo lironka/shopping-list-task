@@ -1,0 +1,82 @@
+@import '../shared/_mixins.scss';
+@import '../shared/_variables.scss';
+
+.block-title {
+    background-image: $linear-gradient;
+    text-transform: uppercase;
+    color: $color-white;
+    padding: 15px;
+}
+
+.block-content {
+    border: $border;
+    height: calc(100% - 40px);
+    padding: 15px 0;
+    overflow: auto;
+
+    @media screen and (max-width: 800px) {
+        overflow: initial;
+        height: auto;
+    }
+}
+
+.product {
+    @include flexbox();
+    @include align-items(center);
+    border-bottom: $border;
+    padding: 5px 10px;
+    
+    input[type="text"] {
+        @include flex(1 1 auto);
+        border: 0px;
+        color: $text-light;
+        margin-left: 5px;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+            color:$text-basic;
+        }
+    }
+    button {
+        color: $color-red;
+        border: 0px;
+        padding-right: 0;
+        cursor: pointer;
+        display: none;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            transform: scale(1.2);
+            font-weight: bold;
+        }
+    }
+    &.is-active {
+        input[type="text"] {
+            color:$text-basic;
+        }
+        button {
+            display: block;
+        }
+    }
+}
+
+.add-product {
+    display: block;
+    width: 100%;
+    border: 0px;
+    border-bottom:$border;
+    text-align: left;
+    padding-left: 31px;
+    height: 32px;
+    color: $text-light;
+
+    &:hover,
+    &:focus
+    {
+        cursor: pointer;
+        color: $text-basic;
+        outline: none;
+    }
+}

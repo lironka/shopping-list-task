@@ -1,0 +1,26 @@
+@import './app/shared/_mixins.scss';
+@import './app/shared/_variables.scss';
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100% !important;
+    height: 100%;
+}
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    color: #000000;
+}
+
+app-root {
+    @include flexbox;
+    @include flex-direction(column);
+    height: 100%;
+    @media screen and (max-width: 800px) {
+        height: auto;
+    }
+}
+

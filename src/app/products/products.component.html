@@ -1,0 +1,13 @@
+<div class="block-title">Add Your Items Hear</div>
+<div class="block-content">
+
+  <div class="product" *ngFor="let product of products" [class.is-active]="selectedProductId === product.id">
+    <input type="checkbox">
+    <input type="text" #nameProd="ngModel" [(ngModel)]="product.name" 
+    (focus)="selectItem(product, $event)" (blur)="updateItem(product);" 
+    (keyup.enter)="updateItem(product)">
+    <button type="button" class="delete" (click)="deleteItem(product,$event)" title="DELETE {{product.name}}">X</button>
+  </div>
+
+  <button type="text" class="add-product" (click)="addItem()">Add Item</button>
+</div>

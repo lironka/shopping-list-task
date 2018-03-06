@@ -1,0 +1,77 @@
+@import './shared/_mixins.scss';
+@import './shared/_variables.scss';
+
+$border-color: #d3d3d3;
+$border: 1px solid $border-color;
+$text-basic:#000;
+$text-light:#999999;
+$color-red: red;
+
+
+header {
+    @include flex(0 0 auto);
+    padding: 15px;
+    color: $color-white;
+    background-image: $linear-gradient;
+    font-size: 1.5rem;
+}
+
+main {
+    @include flexbox;
+    @include flex(1 1 auto);
+    @include justify-content(center);
+    @include align-items(center);
+
+    @media screen and (max-width: 800px) {
+        width: auto;
+        @include flex-direction(column);
+        @include align-items(start);
+        padding: 30px 20px;
+        
+    }
+}
+.wrapper {
+    @include flex(0 0 800px);
+    @include flexbox();
+    height: 400px;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        display: block;
+        //@include flex-direction(column);
+        //@include align-items(start);
+        padding: 30px 20px;
+        
+    }
+}
+
+
+.products {
+    @include flex(0 0 300px);
+    height: 400px;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        height: auto;
+        @include flex(0 0 auto);
+    }
+}
+
+.details {
+    @include flex(0 0 500px);
+    height: 400px;
+    margin-left: 20px;
+    visibility: hidden;
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-top: 20px;
+        @include flex(0 0 auto);
+    }
+
+    &.visible {
+        visibility: visible;
+    }
+}
+

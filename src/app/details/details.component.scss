@@ -1,0 +1,48 @@
+@import '../shared/_mixins.scss';
+@import '../shared/_variables.scss';
+
+:host(.details) {
+    @include flex(0 0 480px);
+    height: 400px;
+    margin-left: 20px;
+    display: block;
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        margin-top: 20px;
+        @include flex(0 0 auto);
+    }
+} 
+.block-title {
+    background-image: $linear-gradient;
+    text-transform: uppercase;
+    color: $color-white;
+    padding: 15px;
+}
+
+.block-content {
+    border: $border;
+    height: calc(100% - 40px);
+    padding: 15px;
+
+    @media screen and (max-width: 800px) {
+        overflow: initial;
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input,
+    textarea {
+        display: block;
+        width: 100%;
+        border: $border;
+    }
+}

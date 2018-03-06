@@ -1,0 +1,52 @@
+/*------------------------------------*\
+    Mixins
+\*------------------------------------*/
+
+// Flex
+// ------------------------------
+@mixin flexbox {
+    display: -webkit-box; // old
+    display: -moz-box; // old
+    display: -ms-flexbox; // ie
+    display: flex; // new
+}
+
+@mixin flex($values) {
+    -ms-flex: $values;
+    -webkit-flex: $values;
+    flex: $values;
+}
+
+@mixin flex-direction($direction) {
+    @if $direction==column {
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+    @else {
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+@mixin flex-order($order) {
+    -webkit-box-ordinal-group: $order; // old
+    -moz-box-ordinal-group: $order; // old
+    -ms-flex-order: $order; // ie
+    order: $order; // new
+}
+
+@mixin justify-content($justify) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+    -ms-flex-pack: $justify;
+}
+@mixin align-items($align) {
+	-webkit-align-items: $align;
+	   -moz-align-items: $align;
+		-ms-align-items: $align;
+			align-items: $align;
+  }

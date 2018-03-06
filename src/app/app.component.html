@@ -1,0 +1,9 @@
+<header>Shopping List</header>
+<main>
+  <div class="wrapper">
+      <app-products class="products" (selectedProduct)="showProduct($event)"></app-products>
+      <!-- <app-details class="details" [class.visible]="selectedProduct" [product]="selectedProduct"></app-details> -->
+      <router-outlet></router-outlet>
+  </div>
+</main>
+
