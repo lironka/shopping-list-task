@@ -31,9 +31,13 @@ item padding top/bottom: 5px
 
 ## Usage
 `git clone https://github.com/lironka/shopping-list-task.git shopping-list-task`
+
 `cd shopping-list-task`
+
 `npm install`
+
 Run `npm run json-server &` for a fake api server.
+
 Run `ng serve` for an application.
 
 ## Technical details
