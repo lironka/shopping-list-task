@@ -8,6 +8,8 @@ import { ProductsComponent } from './products/products.component';
 import { DetailsComponent } from './details/details.component';
 import { ProductService } from './product.service';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { MessageService } from './message.service';
 import { HttpModule } from '@angular/http';
@@ -23,6 +25,12 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     HttpClientModule,
     HttpModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
     AppRoutingModule
   ],
   providers: [ProductService, MessageService],

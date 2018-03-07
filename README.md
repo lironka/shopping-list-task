@@ -29,7 +29,7 @@ item padding top/bottom: 5px
 ## Result
 [shopping-list-task.tk](http://shopping-list-task.tk/)
 
-## Usage
+## Usage version with json-server
 `git clone https://github.com/lironka/shopping-list-task.git shopping-list-task`
 
 `cd shopping-list-task`
@@ -37,6 +37,17 @@ item padding top/bottom: 5px
 `npm install`
 
 Run `npm run json-server &` for a fake api server.
+
+Run `ng serve` for an application.
+
+## Usage version with angular-in-memory-web-api
+`git clone https://github.com/lironka/shopping-list-task.git shopping-list-task`
+
+`cd shopping-list-task`
+
+Change brunch `git checkout in-memory-web-api`
+
+`npm install`
 
 Run `ng serve` for an application.
 

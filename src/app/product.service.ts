@@ -8,9 +8,6 @@ import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { environment } from '../environments/environment';
-const API_URL = environment.apiUrl;
-
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -18,32 +15,26 @@ const httpOptions = {
 @Injectable()
 export class ProductService {
 
+  private productsUrl = 'api/products';  // URL to web api
   private productsLocal: Product[];
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   getListProducts(): Observable<Product[]> {
-    return this.http.get(API_URL + '/products')
-    .map((response) => {
-        const products = response.json();
-        return products.map((product) => new Product(product)); 
-    })
+    return this.http.get<Product[]>(this.productsUrl)
     .catch(this.handleError('getListProducts', []));
   }
 
   getProduct(id: number): Observable<Product> {
-    return this.http.get(API_URL + '/products/' + id)
-    .map(response => {
-      return new Product(response.json());
-    }).pipe(
+    return this.http.get<Product>(this.productsUrl + '/'+ id)
+    .pipe(
       catchError(this.handleError<Product>(`getProduct id=${id}`))
     );
   }
 
   addProduct (product: Product): Observable<Product> {
     return this.http
-    .post(API_URL + '/products', product)
-    .map(response => new Product(response.json()))
+    .post<Product>(this.productsUrl, product)
     .pipe(
       catchError(this.handleError<Product>('addProduct'))
     );
@@ -51,8 +42,7 @@ export class ProductService {
 
   updateProduct (product: Product): Observable<any> {
     return this.http
-    .put(API_URL + '/products/' + product.id, product)
-    .map(response => new Product(response.json()))
+    .put(this.productsUrl + '/'+ product.id, product)
     .pipe(
       catchError(this.handleError<Product>('updateProduct'))
     );
@@ -60,8 +50,8 @@ export class ProductService {
 
   deleteProduct (productId: number): Observable<null> {
     return this.http
-    .delete(API_URL + '/products/' + productId)
-    .map(response => null)
+    .delete(this.productsUrl + '/'+ productId)
+    .map(response => null) 
     .pipe(
       catchError(this.handleError<Product>('deleteProduct'))
     );

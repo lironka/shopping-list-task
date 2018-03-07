@@ -8,8 +8,7 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "json-server": "json-server --watch db.json"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +23,6 @@
     "@angular/router": "^5.2.0",
     "angular-in-memory-web-api": "^0.5.3",
     "core-js": "^2.4.1",
-    "json-server": "^0.12.1",
     "npm": "^5.7.1",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
