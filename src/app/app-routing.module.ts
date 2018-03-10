@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { DetailsComponent } from './details/details.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'products/:id', component: DetailsComponent }
 ];
 

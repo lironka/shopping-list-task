@@ -51,5 +51,8 @@ Change brunch `git checkout in-memory-web-api`
 
 Run `ng serve` for an application.
 
+## Tests
+`ng test`
+
 ## Technical details
 Angular 5
