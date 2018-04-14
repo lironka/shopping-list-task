@@ -26,9 +26,6 @@ text color: #000000
 item padding left/right: 10px 
 item padding top/bottom: 5px 
 
-## Result
-[shopping-list-task.tk](http://shopping-list-task.tk/)
-
 ## Usage version with json-server
 `git clone https://github.com/lironka/shopping-list-task.git shopping-list-task`
 
